@@ -16,14 +16,15 @@
   "scripts": {
     "dev": "run-p routify nollup",
     "dev:ssr": "run-p routify rollup",
-    "build": "run-s build:*",
+    "build": "lint && run-s build:*",
     "build:app": "routify -b && rollup -c",
     "build:static": "spank",
     "serve": "spassr --ssr",
     "rollup": "rollup -cw",
     "nollup": "nollup -c",
     "routify": "routify",
-    "lint": "eslint . --ext .js,.svelte --fix"
+    "lint": "eslint . --ext .js,.svelte --fix",
+    "vc:dev": "vercel dev"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.0.0",
