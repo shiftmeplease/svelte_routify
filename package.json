@@ -13,7 +13,6 @@
     "routify": "run routify"
   },
   "scripts": {
-    "vercel-build": "node ./build.js",
     "dev": "run-p routify nollup",
     "dev:ssr": "run-p routify rollup",
     "build": "run-s build:*",
