@@ -10,7 +10,8 @@
     "serve": "serve content in 'dist' folder",
     "rollup": "run the rollup bundler",
     "nollup": "run the nollup no-bundler",
-    "routify": "run routify"
+    "routify": "run routify",
+    "lint": "run elint fix"
   },
   "scripts": {
     "dev": "run-p routify nollup",
@@ -29,6 +30,7 @@
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@roxi/routify": "^2.12.4",
     "cross-env": "^7.0.2",
+    "crypto-es": "^1.2.7",
     "eslint": "^7.24.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",

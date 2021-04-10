@@ -1,11 +1,11 @@
 import { writable } from "svelte/store";
 import * as data from "./data";
+import CryptoJS from "crypto-es";
 export const dataStore = writable({ ok: false, ...data });
 
 function _decipher(message = "", key = "") {
-  //TODO fix import
-  const code = CryptoJS.AES.decrypt(message, key); //eslint-disable-line no-undef
-  const decryptedMessage = code.toString(CryptoJS.enc.Utf8); //eslint-disable-line no-undef
+  const code = CryptoJS.AES.decrypt(message, key);
+  const decryptedMessage = code.toString(CryptoJS.enc.Utf8);
 
   return decryptedMessage;
 }
@@ -13,7 +13,11 @@ function _decipher(message = "", key = "") {
 const validVerifyMessage = "U2FsdGVkX18HLjWDxP85nu8CJslcGP18Pckr4KiaQuQ=";
 
 export const decipher = (pass) => {
-  if (_decipher(validVerifyMessage, pass) !== "OK") {
+  try {
+    if (_decipher(validVerifyMessage, pass) !== "OK") {
+      return;
+    }
+  } catch {
     return;
   }
 
