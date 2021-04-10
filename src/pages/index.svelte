@@ -17,6 +17,6 @@
   <div class="text-center">
     <Badge type="success">Svelte + Routify</Badge>
     <Badge type="success">Bootstrap 5.0</Badge>
-    <Badge type="success">Github Pages</Badge>
+    <Badge type="success">Vercel</Badge>
   </div>
 </div>
