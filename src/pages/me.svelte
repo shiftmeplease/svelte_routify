@@ -5,7 +5,7 @@
   //TODO add pass via # request
 
   let store;
-  const unsub = dataStore.subscribe((storeVal) => {
+  dataStore.subscribe((storeVal) => {
     store = storeVal;
   });
   let passValue;

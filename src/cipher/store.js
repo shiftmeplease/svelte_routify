@@ -3,8 +3,9 @@ import * as data from "./data";
 export const dataStore = writable({ ok: false, ...data });
 
 function _decipher(message = "", key = "") {
-  const code = CryptoJS.AES.decrypt(message, key);
-  const decryptedMessage = code.toString(CryptoJS.enc.Utf8);
+  //TODO fix import
+  const code = CryptoJS.AES.decrypt(message, key); //eslint-disable-line no-undef
+  const decryptedMessage = code.toString(CryptoJS.enc.Utf8); //eslint-disable-line no-undef
 
   return decryptedMessage;
 }
