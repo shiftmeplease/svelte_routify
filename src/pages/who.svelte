@@ -1,3 +1,4 @@
+<!-- routify:options index=4 -->
 <script>
   import Badge from "../components/Badge.svelte";
 </script>

@@ -1,3 +1,4 @@
+<!-- routify:options index=2 -->
 <script>
   import { dataStore, decipher } from "../cipher/store";
 
@@ -10,11 +11,6 @@
   let passValue;
   $: decipher(passValue);
 </script>
-
-<svelte:head>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-</svelte:head>
 
 <div>
   <h1 class="text-center mt-2 mb-0">Личное</h1>

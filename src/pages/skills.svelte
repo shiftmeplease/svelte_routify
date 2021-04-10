@@ -1,3 +1,4 @@
+<!-- routify:options index=3 -->
 <script>
   import Badge from "../components/Badge.svelte";
 </script>
@@ -16,6 +17,7 @@
       <Badge type="secondary">Typescript (15%)</Badge>
     </div>
     <div class="col-sm">
+      <Badge type="secondary">Svelte (13%)</Badge>
       <Badge type="secondary">Bootstrap 5.0 (5%)</Badge>
       <Badge type="secondary">HTML</Badge>
       <Badge type="secondary">HTTP</Badge>
