@@ -1,4 +1,3 @@
-<!-- routify:options preload="proximity" -->
 <script>
   import { TabsTransition } from "@roxi/routify/decorators";
   import Menu from "../components/Menu.svelte";
@@ -11,6 +10,8 @@
     ["./tests", "Svelte Tests"],
   ];
 </script>
+
+<!-- routify:options preload="proximity" -->
 
 <main>
   <Menu menuButtons={menu} />
