@@ -11,7 +11,7 @@ module.exports = {
   },
   rules: {},
   plugins: ["svelte3"],
-  ignorePatterns: ["dist/build/", "/.routify"],
+  ignorePatterns: ["dist/build/", "/.routify", "/node_modules"],
   overrides: [
     {
       files: ["**/*.svelte"],
