@@ -30,7 +30,8 @@ jobs:
       # TODO add caching?
       - name: Install dependencies
         run: |
-        cd /app
+        #TODO copy package json & cd app check
+        cd app
         npm ci
 
       - name: Start build

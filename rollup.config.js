@@ -10,11 +10,24 @@ import getConfig from "@roxi/routify/lib/utils/config";
 import autoPreprocess from "svelte-preprocess";
 import postcssImport from "postcss-import";
 
-const { distDir } = getConfig(); // use Routify's distDir for SSOT
-const assetsDir = "assets";
-const buildDir = `${distDir}/build`;
-const isNollup = !!process.env.NOLLUP;
 const production = !process.env.ROLLUP_WATCH;
+const isNollup = !!process.env.NOLLUP;
+
+let appDir = ".";
+if (!production) {
+  appDir = "./app";
+}
+
+const { distDir } = getConfig(); // use Routify's distDir for SSOT
+const assetsDir = `${appDir}/assets`;
+const buildDir = `${distDir}/build`;
+
+console.log({
+  distDir,
+  assetsDir,
+  buildDir,
+  svelteEntry: `${appDir}/src/main.js`,
+});
 
 // clear previous builds
 removeSync(distDir);
@@ -36,6 +49,7 @@ const serve = () => ({
     });
   },
 });
+
 const copyToDist = () => ({
   writeBundle() {
     copySync(assetsDir, distDir);
@@ -44,7 +58,7 @@ const copyToDist = () => ({
 
 export default {
   preserveEntrySignatures: false,
-  input: [`src/main.js`],
+  input: [`${appDir}/src/main.js`],
   output: {
     sourcemap: true,
     format: "esm",
