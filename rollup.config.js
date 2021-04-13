@@ -70,7 +70,8 @@ export default {
     svelte({
       dev: !production, // run-time checks
       // Extract component CSS — better performance
-      css: (css) => css.write(`bundle.css`),
+      // css: (css) => css.write(`bundle.css`),
+      emitCss: false,
       hot: isNollup,
       preprocess: [
         autoPreprocess({

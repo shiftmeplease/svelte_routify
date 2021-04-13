@@ -1,5 +1,12 @@
+const production = process.env.NODE_ENV === "production";
+
+let dir = ".";
+if (!production) {
+  dir += "/app";
+}
+
 module.exports = {
-  pages: "./app/src/pages",
-  routifyDir: "./app/.routify",
-  distDir: "./app/dist",
+  pages: `${dir}/src/pages`,
+  routifyDir: `${dir}/.routify`,
+  distDir: `${dir}/dist`,
 };
