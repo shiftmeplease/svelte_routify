@@ -12,4 +12,4 @@ assets/build
 npm-debug.log
 .eslintrc.js
 .git
-**/README.md
+*.md
