@@ -13,21 +13,14 @@ import postcssImport from "postcss-import";
 const production = !process.env.ROLLUP_WATCH;
 const isNollup = !!process.env.NOLLUP;
 
-let appDir = ".";
-if (!production) {
-  appDir = "./app";
-}
+// let appDir = ".";
+// if (!production) {
+const appDir = "./app";
+// }
 
 const { distDir } = getConfig(); // use Routify's distDir for SSOT
 const assetsDir = `${appDir}/assets`;
 const buildDir = `${distDir}/build`;
-
-console.log({
-  distDir,
-  assetsDir,
-  buildDir,
-  svelteEntry: `${appDir}/src/main.js`,
-});
 
 // clear previous builds
 removeSync(distDir);
@@ -68,9 +61,7 @@ export default {
   },
   plugins: [
     svelte({
-      dev: !production, // run-time checks
-      // Extract component CSS — better performance
-      // css: (css) => css.write(`bundle.css`),
+      // dev: !production,
       emitCss: false,
       hot: isNollup,
       preprocess: [

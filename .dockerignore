@@ -10,3 +10,6 @@ assets/build
 /api
 .github
 npm-debug.log
+.eslintrc.js
+.git
+**/README.md

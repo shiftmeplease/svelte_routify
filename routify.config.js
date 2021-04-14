@@ -1,9 +1,11 @@
-const production = process.env.NODE_ENV === "production";
+// const production = process.env.NODE_ENV === "production";
 
-let dir = ".";
-if (!production) {
-  dir += "/app";
-}
+// let dir = "." + ;
+// if (!production) {
+//   dir += "/app";
+// }
+
+const dir = "./app";
 
 module.exports = {
   pages: `${dir}/src/pages`,

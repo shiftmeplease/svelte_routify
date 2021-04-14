@@ -21,6 +21,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      env:
+        NODE_ENV: production
+        
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
@@ -29,10 +32,7 @@ jobs:
       # Runs a single command using the runners shell
       # TODO add caching?
       - name: Install dependencies
-        run: |
-        #TODO copy package json & cd app check
-        cd app
-        npm ci
+        run: npm ci
 
       - name: Start build
         run: npm run build
